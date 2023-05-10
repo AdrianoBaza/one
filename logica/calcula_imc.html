@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //calcula o imc.
+    function calculaImc(peso, altura) {
+        var imc = peso / (altura * altura); //recebe parâmetros e calcula o imc.
+        mostra("O imc calculado é " + imc); //imprime o resultado do cáclculo do imc.
+    }
+
+    calculaImc(73, 1.71); //chama a função calculaImc e passa os parâmetros.
+    calculaImc(68, 1.72); //chama a função calculaImc e passa os parâmetros.    
+
+</script>
