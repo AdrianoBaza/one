@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function pontosGanhos(vitorias, empates) {
+        return (vitorias * 3) + empates;
+    }
+
+    var pontosAnoAnterior = 28; //declara a variável e atribui pontos corresponentes ao ano anterior.
+    var anoAtual = 2023; //declara a variável e atribui o valor referente ao ano atual.
+    var vitorias = parseInt(prompt("Informe a quantidade de vitórias:")); //recebe a quantidade de vitorias.
+    var empates = parseInt(prompt("informe a quantidade de empates:")); //recebe a quantidade de empates.
+
+    var pontosAnoAtual = pontosGanhos(vitorias, empates); //calcula os pontos correspondentes ao ano atual.
+
+    //executa instruções caso a condição seja verdadeira (pontuação maior que ano anterior).
+    if(pontosAnoAtual > pontosAnoAnterior) {
+        mostra("Seu time conquistou " + pontosAnoAtual + " pontos em " + anoAtual + " e foi melhor que o ano passado quando conquistou " + pontosAnoAnterior + " pontos.");
+    }
+
+    //executa instruções caso a condição seja falsa (pontuação menor que ano anterior).
+    if(pontosAnoAtual < pontosAnoAnterior) {
+        mostra("Seu time conquistou " + pontosAnoAtual + " pontos em " + anoAtual + " e o total de pontos desse ano foi inferior ao ano passado quando conquistou " + pontosAnoAnterior + " pontos.");
+    }
+
+    //executa instruções caso a pontuação seja igual ao ano anterior.
+    if(pontosAnoAtual == pontosAnoAnterior) {
+        mostra("Seu time conquistou " + pontosAnoAtual + " pontos em " + anoAtual + " igualando o desempenho do ano passado quando conquistou " + pontosAnoAnterior + " pontos.");
+    }
+
+    mostra("fim");
+
+</script>
