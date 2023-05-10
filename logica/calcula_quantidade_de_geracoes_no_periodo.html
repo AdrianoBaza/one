@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //calcula a quantidade de gerações de brasileiros no período.
+    function quantidadeDeGeracoes(anoInicial, anoAtual) {
+        var idadeMediaParaTerFilhos = 28; //recebe a idade média que um casal atinge para ter filhos.
+        var totalAnosPassados = anoAtual - anoInicial; //calcula o total de anos do período.
+
+        mostra("Desde " + anoInicial + " até " + anoAtual + " tiveram " + totalAnosPassados / idadeMediaParaTerFilhos + " gerações de brasileiros."); //imprime o total de gerações de brasileiros no período.
+    }
+
+    var anoInicial = 1500; //recebe o ano inicial.
+    var anoAtual = 2023; //recebe o ano atual.
+    
+    quantidadeDeGeracoes(anoInicial, anoAtual); //chama a função quantidadeDeGeracoes e passa os parâmetros.
+
+</script>
