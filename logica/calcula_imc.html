@@ -18,8 +18,10 @@
         return peso / (altura * altura); //recebe parâmetros, calcula e retorna o imc.
     }
 
-    var imc = calculaImc(73, 1.73); //chama a função calculaImc, passa os parâmetros e recebe o retorno. 
-    
-    mostra("O imc calculado é " + imc + "."); //imprime o resultado do cálculo do imc.
+    var nome = prompt("Informe o seu nome:"); //captura nome do usuário.
+    var altura = prompt("Olá " + nome + ", informe sua altura:"); //captura altura do usuário.
+    var peso = prompt(nome + ", agora informe seu peso:"); //captura peso do usuário.
+    var imc = calculaImc(peso, altura); //chama a função calculaImc, passa os parâmetros e recebe o retorno. 
+    mostra(nome + ", o seu IMC é " + imc + "."); //imprime o resultado do cálculo do imc.
 
 </script>
