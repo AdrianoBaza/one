@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<h3>Álcool ou Gasolina</h3>
+
+<script>
+    var capacidadeTanque = 40; //armazena a capacidade do tanque.
+    var distanciaPercorridaGasolina = 480; //armazena a distancia máxima percorrida com um tanque de gasolina.
+    var distanciaPercorridaAlcool = 300; //armazena a distancia máxima percorrida com um tanque de álcool.
+    var autonomiaPorLitroGasolina = distanciaPercorridaGasolina / capacidadeTanque; //calcula a autonomia do veículo por litro de gasolina;   
+    var autonomiaPorLitroAlcool = distanciaPercorridaAlcool / capacidadeTanque; //calcula a autonomia do veículo por litro de álcool;
+
+    document.write("Com gasolina o veículo percorre " + autonomiaPorLitroGasolina + " kilômetros por litro."); //imprime a autonomia do veículo por litro de gasolina.
+    document.write("<br>");
+    document.write("No álcool, a autonômia do veículo  é de " + autonomiaPorLitroAlcool + " kilômetros por litro."); //imprime a autonomia do veículo por litro de álcool.
+</script>
