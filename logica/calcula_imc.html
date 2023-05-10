@@ -15,11 +15,11 @@
 
     //calcula o imc.
     function calculaImc(peso, altura) {
-        var imc = peso / (altura * altura); //recebe parâmetros e calcula o imc.
-        mostra("O imc calculado é " + imc); //imprime o resultado do cáclculo do imc.
+        return peso / (altura * altura); //recebe parâmetros, calcula e retorna o imc.
     }
 
-    calculaImc(73, 1.71); //chama a função calculaImc e passa os parâmetros.
-    calculaImc(68, 1.72); //chama a função calculaImc e passa os parâmetros.    
+    var imc = calculaImc(73, 1.73); //chama a função calculaImc, passa os parâmetros e recebe o retorno. 
+    
+    mostra("O imc calculado é " + imc + "."); //imprime o resultado do cálculo do imc.
 
 </script>
