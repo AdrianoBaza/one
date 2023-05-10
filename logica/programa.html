@@ -1,19 +1,24 @@
 <meta charset="UTF-8">
 
 <script>
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
     var ano = 2016;//adicionada a variável ano com valor atribuído.
     document.write("Flávio nasceu em " + (ano - 39));
-    document.write("<br>");
+    pulaLinha();
     document.write("Joaquim nasceu em " + (ano - 20));
-    document.write("<br>");
+    pulaLinha();
     document.write("Barney nasceu em " + (ano - 40));
 
-    //adiconadas as 3 variáveis e atribuidos os valores correpondes a idade de cada pessoa.
+    //adiconadas as 3 variáveis e atribuidos os valores correpondentes a idade de cada pessoa.
     var idadeFlavio = 39;
     var idadeJoaquim = 20;
     var idadeBarney = 40;
 
-    var media = (idadeFlavio + idadeJoaquim + idadeBarney) / 3; //calcula a média das idade.
-    document.write("<br>");
-    document.write("A média das idades é " + media + " anos."); //imprime a média.
+    var media = (idadeFlavio + idadeJoaquim + idadeBarney) / 3; //calcula a média das idades.
+    pulaLinha();
+    document.write("A média das idades é " + media + " anos."); //imprime a média das idades.
 </script>
