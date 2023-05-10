@@ -6,12 +6,16 @@
         document.write("<br>");
     }
 
+    //função recebe parâmetro, imprime e chama a função pulaLinha.  
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
     var ano = 2016;//adicionada a variável ano com valor atribuído.
-    document.write("Flávio nasceu em " + (ano - 39));
-    pulaLinha();
-    document.write("Joaquim nasceu em " + (ano - 20));
-    pulaLinha();
-    document.write("Barney nasceu em " + (ano - 40));
+    mostra("Flávio nasceu em " + (ano - 39));
+    mostra("Joaquim nasceu em " + (ano - 20));
+    mostra("Barney nasceu em " + (ano - 40));
 
     //adiconadas as 3 variáveis e atribuidos os valores correpondentes a idade de cada pessoa.
     var idadeFlavio = 39;
@@ -19,6 +23,5 @@
     var idadeBarney = 40;
 
     var media = (idadeFlavio + idadeJoaquim + idadeBarney) / 3; //calcula a média das idades.
-    pulaLinha();
-    document.write("A média das idades é " + media + " anos."); //imprime a média das idades.
+    mostra("A média das idades é " + media + " anos."); //imprime a média das idades.
 </script>
