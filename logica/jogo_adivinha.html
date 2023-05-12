@@ -19,13 +19,18 @@
     }
 
     var numeroPensado = sorteia(); //recebe o número pensado aleatoriamente.
+    console.log(numeroPensado);
     var chute = parseInt(prompt("Informe seu chute:")); //recebe o palpite do usuário. 
 
-    //condição compara o numeroPensado com o chute do usuário e executa a instrução if ou else.
+    //condição compara o número pensado com o chute do usuário e executa a instrução if ou else.
     if(chute == numeroPensado) {
         mostra("Você acertou!");
-    } else {
-        mostra("Você errou! O número pensado foi " + numeroPensado);
+    } else { //condição compara se o chute foi maior ou menor que o número pensado e executa a instrução if ou else.
+        if(chute > numeroPensado) {
+            mostra("Você errou! O seu chute " + chute + " é maior que o número pensado que foi " + numeroPensado + ".");
+        } else {
+            mostra("Você errou! O seu chute " + chute + " é menor que o número pensado que foi " + numeroPensado + ".");
+        }        
     }
 
 </script>
