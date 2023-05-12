@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*imprimir todos os números entre 30 e 40 (inclusive 30 e 40), porém os números 33 e 37 não devem ser impressos! No final, o trecho de código precisa ter a palavra "FIM". Use o while para essa tarefa.*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 30; //usada para incrementar o loop.
+
+    //loop testa a condição e executa enquanto verdadeira. 
+    while(contador <= 40) {
+        if(contador != 33 && contador != 37) { //condição para testar a exceção proposta pelo problema para não incluir 33 e 37.
+            mostra(contador);
+        }        
+        contador = contador + 1;
+    }
+
+    mostra("FIM");
+
+</script>
