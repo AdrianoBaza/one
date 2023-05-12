@@ -13,7 +13,12 @@
         pulaLinha();
     }
 
-    var numeroPensado = Math.round(Math.random() * 10); //gera um número entre 0 a 10 de forma aleatória.
+    //sorteia aleatoriamente um número entre 0 a 10.
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+
+    var numeroPensado = sorteia(); //recebe o número pensado aleatoriamente.
     var chute = parseInt(prompt("Informe seu chute:")); //recebe o palpite do usuário. 
 
     //condição compara o numeroPensado com o chute do usuário e executa a instrução if ou else.
