@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*imprimir em ordem decrescente todos os números entre 20 e 0, incluindo os limites! No final, escreva a palavra "FIM".*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var quantidadeFamiliares = parseInt(prompt("Digite a quantidade de pessoas em sua família:")); //armazena a quantidade de familiares informada pelo usuário.
+    var contador = 1; //para incrementar o loop.
+    var totalIdades = 0; //para somar o valor de todas as idades.
+
+    //recebe as idades dos familiares. 
+    while(contador <= quantidadeFamiliares) {
+        var idade = parseInt(prompt("Digite a idade da " + contador + "a pessoa:"));
+        contador++;
+        totalIdades = totalIdades + idade; //consolida a soma total das idades.
+    }
+
+    var mediaIdades = totalIdades / quantidadeFamiliares; //calcula a média das idades.
+    mostra("A média de idade dos familiares é " + mediaIdades + " anos."); //imprime a média das idades da família.
+
+</script>
