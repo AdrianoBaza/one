@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var limite = parseInt(prompt("Entre com a data limite")); //recebe a data limite inserida pelo usuário.
+    var inicio = 1930; //será usada para somar o total de copas do período;
+    var anoCopa = inicio; //será usada para cada copa que aconteceu no período
+    var totalCopa = 0;
+
+    //gera o loop para avaliar a condição no intervalo entre o ano da 1a copa e o ano limite definido pelo usuário.
+    while(anoCopa <= limite) {
+        mostra("Teve copa em " + anoCopa);
+        anoCopa = anoCopa + 4; // incrementa o loop
+        totalCopa = totalCopa + 1; //incremento para consolidar o total de copas no período;
+    }
+
+    mostra("Entre " + inicio + " e " + limite + " tiveram " + totalCopa + " copas do mundo.");
+
+</script>
