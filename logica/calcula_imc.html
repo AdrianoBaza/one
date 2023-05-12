@@ -24,4 +24,19 @@
     var imc = calculaImc(peso, altura); //chama a função calculaImc, passa os parâmetros e recebe o retorno. 
     mostra(nome + ", o seu IMC é " + imc + "."); //imprime o resultado do cálculo do imc.
 
+    //executa instruções caso a condição seja verdadeira (imc menor que 18.5).
+    if(imc < 18.5) {
+        mostra("Seu IMC está abaixo do recomendado pela OMS.");
+    }
+
+    //executa instruções caso a condição seja verdadeira (imc maior que 35).
+    if(imc > 35) {
+        mostra("Seu IMC está acima do recomendado pela OMS.");
+    }
+
+    //executa instruções caso a condição seja atendida (imc maior ou igual a 18 e menor ou igual a 35).
+    if(imc >= 18.5 && imc <= 35) {
+        mostra("Seu IMC está excelente e atende ao recomendado pela OMS.");
+    }
+
 </script>
