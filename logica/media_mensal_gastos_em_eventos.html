@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*informar o total gasto nos eventos e disso obter uma média das despesas. Essa média ajudará a prever os gastos futuros nos próximos meses.*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var quantidadeEventos = parseInt(prompt("Digite a quantidade de eventos no mês:")); //armazena a quantidade de eventos realizados no mês informada pelo usuário.
+    var contador = 1; //para incrementar o loop.
+    var totalGastoNosEventos = 0; //consolida a soma do valor gasto em todos os eventos .
+
+    //recebe o valor gasto em cada evento. 
+    while(contador <= quantidadeEventos) {
+        var gastoEvento = parseInt(prompt("Digite o valor gasto no " + contador + "o evento:"));
+        contador++;
+        totalGastoNosEventos = totalGastoNosEventos + gastoEvento; //consolida a soma total de gastos no mês com os eventos.
+    }
+
+    var mediaGastoNosEventos = totalGastoNosEventos / quantidadeEventos; //calcula a média mensal de gastos nos eventos.
+    mostra("A média de gastos com os eventos no mês foi de R$ " + mediaGastoNosEventos + "."); //imprime a média mensal de gastos nos eventos.
+
+</script>
