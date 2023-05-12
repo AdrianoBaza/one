@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 2; //usada para incrementar o loop.
+
+    //loop testa a condição e executa enquanto verdadeira. 
+    while(contador <= 100) {
+        mostra(contador);
+        contador = contador + 2;
+    }
+
+    mostra("FIM");
+
+</script>
