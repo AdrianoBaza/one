@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*imprimir em ordem decrescente todos os números entre 20 e 0, incluindo os limites! No final, escreva a palavra "FIM".*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var cadastroLogin = prompt("Cadastre um nome de usuário:"); //armazena o login cadastrado pelo usuário na criação da conta.
+    var cadastroSenha = prompt("Cadastre uma senha:"); //armazena a senha cadastrada pelo usuário na criação da conta.
+
+    var numeroTentativas = 1; //define o limite de tentativas que o usuário dispõe para acesso e incrementa o loop.
+
+    while(numeroTentativas <= 3) {
+        var acessoLogin = prompt("Informe o seu nome de usuário:"); //armazena o login fornecido pelo usuário para acessar o sistema.
+        var acessoSenha = prompt("Informe a sua senha:"); //armazena a senha fornecida pelo usuário para acessar o sistema.
+
+        //valida os dados inseridos pelo usuário para permitir ou negar o acesso.
+        if(acessoLogin == cadastroLogin && acessoSenha == cadastroSenha) {
+            alert("Acesso liberado. Seja bem vindo ao Portal Alura!");
+            numeroTentativas = 3;
+        } else {
+            if(numeroTentativas == 3) {
+                alert("Login ou senha incorretos. Acesso Negado");
+            } else {
+                alert("Dados incorretos! Tente novamente!!!");
+            } 
+        }           
+       
+        numeroTentativas = numeroTentativas + 1; //incrementa a condição.
+    }       
+
+</script>
