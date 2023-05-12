@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*imprimir em ordem decrescente todos os números entre 20 e 0, incluindo os limites! No final, escreva a palavra "FIM".*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    mostra("<h3>Tabuada de 7</h3>");
+    for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+        mostra("7 x " + multiplicador + " = " + 7 * multiplicador);
+    }     
+
+</script>
