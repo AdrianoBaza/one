@@ -2,6 +2,8 @@
 
 <script>
 
+    /*Jogo adivinha o usuário agora terá três tentativas pra acertar o número pensado. */
+
     //pula uma linha no código.
     function pulaLinha() {
         document.write("<br>");
@@ -20,17 +22,29 @@
 
     var numeroPensado = sorteia(); //recebe o número pensado aleatoriamente.
     console.log(numeroPensado);
-    var chute = parseInt(prompt("Informe seu chute:")); //recebe o palpite do usuário. 
+    var numeroTentativas = 3;
+    var contador = 1;
 
-    //condição compara o número pensado com o chute do usuário e executa a instrução if ou else.
-    if(chute == numeroPensado) {
-        mostra("Você acertou!");
-    } else { //condição compara se o chute foi maior ou menor que o número pensado e executa a instrução if ou else.
-        if(chute > numeroPensado) {
-            mostra("Você errou! O seu chute " + chute + " é maior que o número pensado que foi " + numeroPensado + ".");
-        } else {
-            mostra("Você errou! O seu chute " + chute + " é menor que o número pensado que foi " + numeroPensado + ".");
-        }        
+    //condiciona o número de tentativas. Aninha funções, testa condições e imprime o resultado.
+    while(contador <= numeroTentativas) {
+        var chute = parseInt(prompt("Informe seu chute: (tentativa " + contador + "/" + numeroTentativas +")")); //recebe o palpite do usuário. 
+
+        //condição compara o número pensado com o chute do usuário e executa a instrução if ou else.
+        if(chute == numeroPensado) {
+            alert("Você acertou!");
+            break;
+        } else { //condição compara se o chute foi maior ou menor que o número pensado e executa a instrução if ou else.
+            if(contador <= 3 && chute > numeroPensado) {
+                alert("Você errou!"); 
+                mostra("Na " + contador + "a tentativa o seu chute " + chute + " foi maior que o número pensado.");   
+            } else if(contador <= 3 && chute < numeroPensado) {
+                alert("Você errou!");
+                mostra("Na " + contador + "a tentativa o seu chute " + chute + " foi menor que o número pensado.");
+            } 
+        } 
+        contador++;
     }
+
+    mostra("O número pensado foi " + numeroPensado + "."); //imprime o número pensado.    
 
 </script>
