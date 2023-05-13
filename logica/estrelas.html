@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+    /*usando o caractere * preencher automaticamente 3 linhas com 10 colunas cada.*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //loop vai repetir o caractere * até montar 3 linhas com 10 colunas cada.
+    for(var linha = 1; linha <= 3; linha++){ //for para montar as linhas
+        document.write("*");
+        for(var coluna = 1; coluna < 10; coluna++) { //for para montar as colunas
+            document.write("*");
+        }
+        pulaLinha()
+    }      
+
+</script>
