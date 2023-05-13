@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<input> <!--campo para usuário entrar com o chute dele-->
+<button>Compare com o meu segredo</button> <!--botão para o envio do chute do usuário-->
+
+<script>
+
+    /*Jogo adivinha mais usuário tenta adivinhar o segredo digitando via campo de entrada e botão de envio. A entrada do usuário é comparada com o segredo e o usuário recebe um retorno se acertou ou se errou*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    //compara o input com o segredo e exibe resultado pelo comando alert.
+    function verifica() {
+        if(input.value == segredo) {
+            alert("Você ACERTOU!");
+        } else {
+            alert("Você ERROU!!!!!!!!!!");
+        }
+    }
+
+    //captura entrada do usuário no campo input.
+    var input = document.querySelector("input");
+    input.value;
+
+    var segredo = 5; //atribui valor a variável segredo.
+
+    //captura entrada do usuário ao clicar no botão e executa a função verifica.
+    var button = document.querySelector("button");
+    button.onclick = verifica;      
+
+</script>
