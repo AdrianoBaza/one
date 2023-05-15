@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<input>
+
+<button>verfica</button> <!--cria o botão Clique em em mim-->
+
+<script>
+
+    //esta aplicação permite ao usuário digitar uma informação num campo de texto e retorna um popup com a informação digitada pelo usuário.
+
+    //exibe popup com a mensagem que o usuário digitou no campo input
+    function verifica() {
+        entrada.value
+        alert("Você digitou " + " ' " + entrada.value + " ' "); //exibe a mensagem digitada pelo usuário no campo input.
+        entrada.focus(); //ativa o campo input ao carregar a página.
+        entrada.value = ""; //limpa a variável entrada após o click.
+    }    
+
+    var entrada = document.querySelector("input"); //captura a entrada do usuário no campo input.
+    entrada.focus();
+
+    var botao = document.querySelector("button"); //captura a ação do usuário ao clicar no botão.
+    botao.onclick = verifica; //vincula o clique no botão a execuçao da função verifica. 
+    
+</script>
