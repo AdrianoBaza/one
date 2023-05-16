@@ -4,6 +4,8 @@
 <button>Compare com o meu segredo</button> <!--botão para o envio do chute do usuário-->
 
 <script>
+    /*c3.0: Adicionado array para definição de multiplos segredos. */
+
     /*v2.0: Adicionada a função para gerar segredo aleatoriamente. Melhorada a usabilidade com os recursos de foco para ativar o campo ao carregar a página e a cada interação do usuário e o recurso limpa o campo após cada interação do usuário. */
 
     /*v1.0: Jogo adivinha mais usuário tenta adivinhar o segredo digitando via campo de entrada e botão de envio. A entrada do usuário é comparada com o segredo e o usuário recebe um retorno se acertou ou se errou*/
@@ -21,11 +23,19 @@
 
     //compara o input com o segredo e exibe resultado pelo comando alert.
     function verifica() {
-        if(input.value == segredo) {
-            alert("Você ACERTOU!");
-        } else {
-            alert("Você ERROU!!!!!!!!!!");
+        for(var posicao = 0; posicao < segredos.length; posicao++) {
+            var achou = false;
+            
+            if(input.value == segredos[posicao]) {
+                alert("Você ACERTOU!");
+                achou = true;
+                break;
+            }
         }
+
+        if(achou == false) {
+            alert("Você ERROU!!!!!!!!!!");
+        }        
 
         input.value = ""; //limpa o campo de entrada após cada interação do usuário.
         input.focus(); //ativa o foco no campo após cada interação do usuário.
@@ -35,11 +45,11 @@
     var input = document.querySelector("input");
     input.focus(); //ativa o foco ao carregar a página.
     input.value;
-
-    var segredo = Math.round(Math.random() * 10); //atribui valor a variável segredo.
-
+    
     //captura entrada do usuário ao clicar no botão e executa a função verifica.
     var button = document.querySelector("button");
     button.onclick = verifica;      
+
+    var segredos = [5,7,10,2]; //declaração do array segredos e atribuição dos valores;
 
 </script>
