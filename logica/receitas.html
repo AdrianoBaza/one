@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do Yan</h1> <!--Título-->
+
+<script>
+
+    /*Nesta aplicação o usuário deve gerar uma receita. Para isso ele informa a quantidade de ingredientes da receita e digita todos os ingredientes. O sistema valida cada ingrediente digitado e havendo duplicação o item duplicado é descartado. O programa encerra quando o usuário digitar a quantidade de ingrediente suficientes para preencher o array 'receita' de acordo com a quantidade informada pelo usuário e sem que nenhum item seja duplicado.*/
+
+    //pula uma linha no código.
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    //recebe parâmetro, imprime e chama a função pulaLinha. 
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    
+    var quantidade = parseInt(prompt("Informe a quantidade de ingredientes:")); //recebe a quantidade de ingredientes informada pelo usuário.
+    var receita = []; //declara o array vazio.
+    var contador = 1; //incremento para o loop while.
+    
+
+    //recebe a quantidade informada pelo usuário e preenche o array 'receita' com os ingredientes digitados pelo usuário.
+    while(contador <= quantidade) {
+
+        var achou = false;        
+        ingrediente = (prompt("Informe o " + contador + "º ingrediente:")); //recebe o ingrediente digitado pelo usuário.
+
+        for(var posicao = 0; posicao < 3; posicao++) { //verifica se o ingrediente digitado já está contido no array 'receita'.            
+            if(receita[posicao] == ingrediente) { //descarta o ingrediente caso ele já esteja contido em 'receita'.
+                achou = true;
+                break;
+            }
+        }
+
+        if(achou == false) { //se o ingrediente não estiver contido em 'receita', esta instrução o empurra para dentro do array 'receita'.
+            receita.push(ingrediente);
+            contador++;
+        }
+    }
+
+    mostra("Ingredientes: " + receita); //imprime os itens inseridos pelo usuário no array 'receita'.                  
+
+</script>
