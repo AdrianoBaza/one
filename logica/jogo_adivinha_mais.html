@@ -4,7 +4,10 @@
 <button>Compare com o meu segredo</button> <!--botão para o envio do chute do usuário-->
 
 <script>
-    /*c3.0: Adicionado array para definição de multiplos segredos. */
+
+    /*v4.0: array preenchido automaticamente de forma dinâmica*/
+
+    /*v3.0: Adicionado array para definição de multiplos segredos. */
 
     /*v2.0: Adicionada a função para gerar segredo aleatoriamente. Melhorada a usabilidade com os recursos de foco para ativar o campo ao carregar a página e a cada interação do usuário e o recurso limpa o campo após cada interação do usuário. */
 
@@ -19,6 +22,38 @@
     function mostra(frase) {
         document.write(frase);
         pulaLinha();
+    }
+
+    //sorteia um número aleatoriamente para preenchimento do array;
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+
+    //gera o array vazio; preenche dinâmicamente de acordo com a quantidade informada de elementos; retorna o array preenchido.
+    function sorteiaNumeros(quantidade) {
+        var segredos = []; //declaração do array vazio.
+        var numero = 1;
+
+        while(numero <= quantidade) {
+            var numeroAleatorio = sorteia();
+            if(numeroAleatorio !== 0) { //condição que não permite empurrar número 0 para dentro do array.
+                var achou = false;
+            
+                for(var posicao = 0; posicao < segredos.length; posicao++) {
+                    if(segredos[posicao] == numeroAleatorio) { //condição que não permite números repetidos dentro do array.
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if(achou == false) { //testa condição e, sendo atendida, empurra um numéro para dentro do array. 
+                    segredos.push(numeroAleatorio);
+                    numero++
+                }            
+            }
+        }  
+        
+        return segredos;
     }
 
     //compara o input com o segredo e exibe resultado pelo comando alert.
@@ -41,6 +76,8 @@
         input.focus(); //ativa o foco no campo após cada interação do usuário.
     }
 
+    var segredos = sorteiaNumeros(3); //var segredos ativa a função sorteiaNumeros passando como parâmetro a quantidade de elementos a serem gerados para preencher o array.
+
     //captura entrada do usuário no campo input.
     var input = document.querySelector("input");
     input.focus(); //ativa o foco ao carregar a página.
@@ -48,8 +85,6 @@
     
     //captura entrada do usuário ao clicar no botão e executa a função verifica.
     var button = document.querySelector("button");
-    button.onclick = verifica;      
-
-    var segredos = [5,7,10,2]; //declaração do array segredos e atribuição dos valores;
+    button.onclick = verifica;              
 
 </script>
