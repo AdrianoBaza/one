@@ -1,0 +1,35 @@
+<canvas width="600px" height="400px"></canvas> <!--cria a tag canvas e define largura e altura da área de desenho-->
+
+<script>
+
+    /*criado para testar as funcionalidades básicas das API's do JS para criar desenhos.*/
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    pincel.fillStyle = 'lightgrey'; //define a cor do pincel como lightgrey.
+    pincel.fillRect(0, 0, 600, 400); //define a área a ser pintada de lightgrey.
+
+    //cria o retângulo verde.
+    pincel.fillStyle = 'green'; //define a cor do pincel como green.
+    pincel.fillRect(0, 0, 200, 400); //define o tamanho e pinta de green.
+
+    //cria ao retângulo vermelho.
+    pincel.fillStyle = 'red'; //define a cor do pincel como red.
+    pincel.fillRect(400, 0, 200, 400); //define o tamanho e pinta de red.
+
+    //cria o triângulo amarelo.
+    pincel.fillStyle = 'yellow'; //define a cor do pincel como yellow.
+    pincel.beginPath(); //define a área a ser pintada de green.
+    pincel.moveTo(300, 200); //define o ponto inicial.
+    pincel.lineTo(200, 400); //define o segundo ponto.
+    pincel.lineTo(400, 400); //define o terceiro ponto.
+    pincel.fill(); //preenche a figura do trângulo na cor informada.
+
+    //cria o círculo azul.
+    pincel.fillStyle = 'blue'; //define a cor do pincel como blue.
+    pincel.beginPath(); //define a área a ser pintada de green.
+    pincel.arc(300, 200, 50, 0, 2 * 3.14); //define as coordenadas do círculo.
+    pincel.fill(); //preenche a figura do trângulo na cor informada.
+
+</script>
