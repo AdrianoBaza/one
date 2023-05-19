@@ -1,0 +1,35 @@
+<canvas width="600px" height="400px"></canvas>
+
+<script>
+
+    /*desenho de um quadrado utilizando funções com passagem de parâmetro, loop while e for.*/
+
+    //desenha um quadrado verde com bordas pretas. 
+    function desenhaQuadrado(x, y, cor) {
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, 50, 50);
+    pincel.strokeStyle = 'black';
+    pincel.strokeRect(x, y, 50, 50);
+    }
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    //plano de fundo da área de desenho pintada de cinza claro.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 0; //incrementa o while.
+
+    //chama a função desenhaQuadrado e cria a estrutura de repetição do quadrado verde.
+    while(x < 600) {
+        desenhaQuadrado(x, 0, 'green');
+        x = x + 50;
+    }   
+
+    //chama a função desenhaQuadrado e cria a estrutura de repetição do quadrado vermelho.
+    for(var x = 0; x < 600; x = x + 50) {
+        desenhaQuadrado(x, 50, 'red');
+    }
+    
+</script>
