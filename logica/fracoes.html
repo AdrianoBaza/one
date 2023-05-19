@@ -1,0 +1,36 @@
+<canvas width="600px" height="400px"></canvas>
+
+<script>
+
+    //desenho figura representativa de uma fração utilizando funções com passagem de parâmetro.
+
+    //desenha um quadrado recebendo parâmetros de posicionamento, tamanho, cor. 
+    function desenhaQuadrado(x, y, tamanho, cor) {
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, tamanho, tamanho);
+    pincel.fillStyle = 'black'; //define a cor da borda.
+    pincel.strokeRect(x, y, tamanho, tamanho); //insere a borda na figura do quadrado.
+    }
+
+    //desenha um texto recebendo parâmetros de texto e posicionamento do texto.
+    function desenhaTexto(texto, x, y) {
+        pincel.font='20px Georgia'; //define o tipo e tamanho da fonte.
+        pincel.fillStyle='black'; //define a cor da fonte.
+        pincel.fillText(texto, x, y); //insere o texto conforme os parâmetros recebidos.
+    }
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    //plano de fundo da área de desenho pintada de cinza claro.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    var y = 50; //define o valor da variável y.
+    desenhaQuadrado(50, y, 100, 'green'); //chama a função desenhaQuadrado passando parâmetros de posicionamento, tamanho e cor verde.
+    desenhaQuadrado(150, y, 100, 'green'); //chama a função desenhaQuadrado passando parâmetros de posicionamento, tamanho e cor verde.
+    desenhaQuadrado(250, y, 100, 'green'); //chama a função desenhaQuadrado passando parâmetros de posicionamento, tamanho e cor verde.
+    desenhaQuadrado(350, y, 100, 'white'); //chama a função desenhaQuadrado passando parâmetros de posicionamento, tamanho e cor branco.
+    desenhaTexto("Qual é a fração?", 50, 30); //chama a função desenhaTexto passando parâmetros de texto e posicionamento do texto.
+    
+</script>
