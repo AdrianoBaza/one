@@ -1,0 +1,47 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //desenha dois gráficos de barra para representar o cenário nos anos de 2015 e 2016 em relação ao uso do navegador de internet.
+
+    //desenha um retângulo recebendo parâmetros de posicionamento, tamanho, cor.
+    function desenhaRetangulo(x, y, largura, altura, cor) {
+        pincel.fillStyle=cor;
+        pincel.fillRect(x,y, largura, altura);
+        pincel.strokeStyle='black'; //define a cor da borda.
+        pincel.strokeRect(x,y, largura, altura); //insere a borda na figura do retângulo.
+    }
+
+    //desenha um texto recebendo parâmetros de texto e posicionamento do texto.
+    function desenhaTexto(x, y, texto) {
+        pincel.font='20px Georgia'; //define o tipo e tamanho da fonte.
+        pincel.fillStyle='black'; //define a cor da fonte.
+        pincel.fillText(texto, x, y); //insere o texto conforme os parâmetros recebidos.
+    }
+
+    //desenha o gráfico de barra recebendo parâmetros de posicionamento, tamanho, cor e texto.
+    function desenhaBarra(x, y, serie, cores, texto) {
+        desenhaTexto(x, y - 10, texto); //chama a função desenhaTexto.
+        var somaAltura = 0; //inicializa a variável para somar a altura.
+        for (var i = 0; i < serie.length; i++) {
+            var altura = serie[i];
+            desenhaRetangulo(x, y + somaAltura, 50, altura, cores[i]); //chama a função desenha retângulo.
+            somaAltura = somaAltura + altura; //acumula o total de altura.
+        }
+    }
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    //plano de fundo da área de desenho pintada de cinza claro.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var cores = ['blue','green','yellow', 'red']; //inicializa array com as cores.
+    var serie2015 = [50,25,20,5]; //inicializa array com dados referentes ao ano de 2015.
+    var serie2016 = [65,20,13,2]; //inicializa array com dados referentes ao ano de 2015.
+
+    desenhaBarra(50, 50, serie2015, cores, '2015'); //chama a função desenhaBarra passando os parâmetros para criar o gráfico de 2015.
+    desenhaBarra(150, 50, serie2016, cores, '2016'); //chama a função desenhaBarra passando os parâmetros para criar o gráfico de 2016.
+
+</script>
