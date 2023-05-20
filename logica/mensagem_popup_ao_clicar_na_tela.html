@@ -1,0 +1,21 @@
+<canvas width="600px" height="400px"></canvas>
+
+<script>
+    
+    //exibe uma mensagem 'Seja bem vindo' quando o usuário clicar em qualquer parte da tela/canvas.
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    //plano de fundo da área de desenho pintada em lightgrey.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    //Exibe uma mensagem popup quando usuário clicar na tela/canvas.
+    function exibeAlerta() {
+        alert('Seja bem vindo');
+    }
+
+    tela.onclick = exibeAlerta; //chama a função exibeAlerta quando o usuário clica na tela/canvas.
+    
+</script>
