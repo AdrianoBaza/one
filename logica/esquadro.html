@@ -1,8 +1,8 @@
 <canvas width="600px" height="400px"></canvas>
 
 <script>
-
-    /*desenho estático da figura geométrica de um esquadro.*/
+    
+    //incluída a função desenhaEsquadro que agora recebe parâmeros e gera o desenho estático da figura geométrica de um esquadro.
 
     var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
     var pincel = tela.getContext('2d'); //define o tipo de pincel.
@@ -11,20 +11,22 @@
     pincel.fillStyle = 'lightgrey';
     pincel.fillRect(0, 0, 600, 400);
 
-    //triângulo preto 
-    pincel.fillStyle = 'black'; 
-    pincel.beginPath();
-    pincel.moveTo(50, 50);
-    pincel.lineTo(50, 400);
-    pincel.lineTo(400, 400);
-    pincel.fill();
+    //desenha o esquadro recebendo os parâmetros cor e as coordenadas x e y.
+    function desenhaEsquadro(xa, ya, xc, yc, cor) {
+        pincel.fillStyle = cor; 
+        pincel.beginPath();
+        pincel.moveTo(xa, ya);
+        pincel.lineTo(xa, yc);
+        pincel.lineTo(xc, yc);
+        pincel.fill();
+        pincel.fillStyle = 'white';
+        pincel.beginPath();
+        pincel.moveTo((6 * xa + xc) / 7, (9 * ya + 5 * yc) / 14);
+        pincel.lineTo((6 * xa + xc) / 7, (6 * ya + yc) / 2);
+        pincel.lineTo((3 * xa + xc) / 2, (6 * ya + yc) / 2);
+        pincel.fill();
+    }
 
-    //triângulo branco 
-    pincel.fillStyle = 'white'; 
-    pincel.beginPath();
-    pincel.moveTo(100, 175);
-    pincel.lineTo(100, 350);
-    pincel.lineTo(275, 350);
-    pincel.fill();
+    desenhaEsquadro(50, 50, 400, 400, 'black'); //chama a função desenha esquadro
     
 </script>
