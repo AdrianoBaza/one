@@ -1,0 +1,30 @@
+<canvas width="600px" height="400px"></canvas>
+
+<script>
+    
+    //desenha um círculo quando o usuário clicar em qualquer parte da tela/canvas.
+
+    var tela = document.querySelector('canvas'); //delimita a área de desenho na tela.
+    var pincel = tela.getContext('2d'); //define o tipo de pincel.
+
+    //plano de fundo da área de desenho pintada em lightgrey.
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    //captura as coordenadas do mouse quando o usuário clica na tela e desenha um círculo adicionando os parâmetros desta função.
+    function desenhaCirculo(evento) {
+        var x = evento.pageX - tela.offsetLeft; //captura coordenada x do mouse.
+        var y = evento.pageY - tela.offsetTop; //captura coordenada y do mouse.
+        var raio = 10;
+        if(evento.shiftKey) {
+            raio = raio + 20;
+        }
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+    }
+
+    tela.onclick = desenhaCirculo; //chama a função desenhaCirculo ao clique do usuário na tela.
+    
+</script>
